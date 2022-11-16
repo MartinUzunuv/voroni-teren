@@ -1,9 +1,20 @@
-broi_tochki = Math.floor(Math.random() * 100) + 200;
-chestota = 1;
-n = 10
+
+//excuse my broken english
+
+// edit from here ---->
+broi_tochki = Math.floor(Math.random() * 100) + 200;    
+// quallity. the more the better, but decrease "n" acordingly
+// example: 
+//broi_tochki = 250, n = 10
+//broi_tochki = 100, n = 3
+chestota = 1;    //pixelization
+n = 10   //terrain heigth
+//to here ---->
 
 arr = [];
 
+
+//creating the alpha points
 for (i = 0; i < broi_tochki; i++) {
   arr.push({
     x: Math.random() * window.innerWidth/10*6 + window.innerWidth/10*2,
@@ -12,7 +23,7 @@ for (i = 0; i < broi_tochki; i++) {
   });
 }
 
-
+//checking for how many pixels each alpha point is responsible
 for (x = 0; x < window.innerWidth / chestota; x++) {
   for (y = 0; y < window.innerWidth / chestota; y++) {
     let distance = 10000;
@@ -33,6 +44,7 @@ for (x = 0; x < window.innerWidth / chestota; x++) {
 
 terrain = [];
 
+//putting color to it(depending on how many points each aplha has)
 for (x = 0; x < window.innerWidth / chestota; x++) {
   terrain.push([]);
   for (y = 0; y < window.innerWidth / chestota; y++) {
